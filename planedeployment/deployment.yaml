@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nanajanashiasapp-deployment
+spec:
+  selector:
+    matchLabels:
+      app: napp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: napp
+    spec:
+      containers:
+      - name: napp
+        image: nanajanashia/argocd-app:1.2
+        ports:
+        - containerPort: 8080
