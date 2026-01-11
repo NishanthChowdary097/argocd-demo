@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nanajanashiasapp-deployment
+  name: nginx-deployment
 spec:
   selector:
     matchLabels:
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: napp
-        image: nanajanashia/argocd-app:1.2
+        image: nginx
         ports:
-        - containerPort: 8080
+        - containerPort: 80
